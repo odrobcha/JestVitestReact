@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 //import {logRoles} from '@testing-library/dom'
 import App from "./App";
 import { expect } from 'vitest';
+import { kebabCaseToTitleCase  } from './helpers';
 
 test('button starts with the correct color and the correct text', () => {
 
@@ -10,7 +11,7 @@ test('button starts with the correct color and the correct text', () => {
     // logRoles(container);
     render(<App />);
     const buttonElement = screen.getByRole('button', {name: /blue/i});
-    expect(buttonElement).toHaveClass("red");
+    expect(buttonElement).toHaveClass("medium-violet-red");
 });
 
 
@@ -19,7 +20,7 @@ test('button has correct  color and text  after click', () => {
     const buttonElement = screen.getByRole('button', {name: /blue/i});
     fireEvent.click(buttonElement);
     expect(buttonElement).toHaveTextContent(/red/i);
-    expect(buttonElement).toHaveClass("blue");
+    expect(buttonElement).toHaveClass("midnight-blue");
 
 });
 
@@ -34,7 +35,7 @@ test("Checkbox flow initial state", ()=>{
     expect(buttonElement).toBeEnabled();
     expect(checkboxElement).not.toBeChecked();
     expect(buttonElement).not.toHaveClass("grey");
-    expect(buttonElement).toHaveClass("red");
+    expect(buttonElement).toHaveClass("medium-violet-red");
 });
 
 
@@ -56,4 +57,16 @@ test("Checkbox flow checkbox checked", ()=>{
     expect(buttonElement).toBeEnabled();
     expect(buttonElement).not.toHaveClass("grey");
     expect(checkboxElement).not.toBeChecked();
+});
+
+describe("kebabCaseToTitleCase", ()=>{
+    test("works for no hyphens", ()=>{
+        expect(kebabCaseToTitleCase ('red')).toBe("Red");
+    });
+    test("works for one hyphen", ()=>{
+        expect(kebabCaseToTitleCase ('midnight-blue')).toBe("Midnight Blue");
+    });
+    test("works for multiple hyphens", ()=>{
+        expect(kebabCaseToTitleCase ('medium-violet-red')).toBe("Medium Violet Red");
+    });
 });
