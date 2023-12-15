@@ -143,9 +143,12 @@ Documentation can be found here https://testing-library.com/docs/queries/about/#
 
 -screen.getByRole('role', {name: XXX})
 
-### all roles are here https://www.w3.org/TR/wai-aria/#role_definitions
+### all roles are here
+- https://www.w3.org/TR/wai-aria/#role_definitions
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role
 
-### All matchers can be found here https://github.com/testing-library/jest-dom
+### All matchers can be found here
+- https://github.com/testing-library/jest-dom
 
 - expect(buttonElement).toHaveTextContent(/text/i)
 - expect(buttonElement).toHaveClass("blue");
