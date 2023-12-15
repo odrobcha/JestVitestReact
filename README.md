@@ -106,9 +106,11 @@ Writes test before write code and then write thec ode till test passes
 - tests pass
 
 ##Jest/Vitest
+
 - runs and executes test
 
 ## testing-library
+
 - creates simulated DOM structure without browser
 - provide utilities to interact with this DOM (find element, click, ...)
 
@@ -126,7 +128,7 @@ It gives access to simulated DOM
 
 
 ## Debagging
-Docomentation https://testing-library.com/docs/dom-testing-library/api-debugging/
+Documentation https://testing-library.com/docs/dom-testing-library/api-debugging/
 
 - logRoles
 
@@ -141,9 +143,9 @@ Documentation can be found here https://testing-library.com/docs/queries/about/#
 - screen.getByText(STRING) OR screen.getByText(/text/i) (regula expression)
     Using STRING has to be exactly the searching phrase
 
--screen.getByRole('role', {name: XXX})
+- screen.getByRole('role', {name: XXX})
 
-### all roles are here
+### All roles can be found here
 - https://www.w3.org/TR/wai-aria/#role_definitions
 - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role
 
